@@ -6,7 +6,7 @@
 /*   By: syoma.k <syoma.k@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:07:40 by syoma.k           #+#    #+#             */
-/*   Updated: 2022/11/07 14:48:16 by syoma.k          ###   ########.fr       */
+/*   Updated: 2022/11/08 08:44:19 by syoma.k          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ char	**ft_split(char const *str, char c)
 	if (split == NULL)
 		return (NULL);
 	split = make_sp(split, str, c, count);
+	if (split == NULL)
+		return (NULL);
 	split = push(split, str, c);
 	return (split);
 }
