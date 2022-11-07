@@ -6,7 +6,7 @@
 /*   By: syoma.k <syoma.k@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:12:37 by skudo             #+#    #+#             */
-/*   Updated: 2022/11/06 00:07:03 by syoma.k          ###   ########.fr       */
+/*   Updated: 2022/11/08 07:03:21 by syoma.k          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,14 @@ static int	check_under(char c, long number, int sign)
 
 static int	atooi(char *str, int sign)
 {
-	size_t	i;
 	long	number;
 
 	number = 0;
-	i = 0;
 	while (*str >= '0' && *str <= '9')
 	{
 		number += (*str) - '0';
 		if (!(*(str + 1) >= '0' && *(str + 1) <= '9'))
 			break ;
-		i++;
 		if (check_over(*(str + 1), number, sign))
 			return ((int)LONG_MAX);
 		if (check_under(*(str + 1), number, sign))
